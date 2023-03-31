@@ -5,6 +5,8 @@ class Msiswa(var Nem:String, var Fud: Int = 10,var Tiredness: Int = 0, var Gamin
     var wellrest: Boolean = false;
     var epicgamer: Boolean = false;
     var bookworm: Boolean = false;
+
+
     fun Naming(Name: String)
     {
         Nem = Name;
