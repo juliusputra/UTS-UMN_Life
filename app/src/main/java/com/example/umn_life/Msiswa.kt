@@ -5,7 +5,8 @@ class Msiswa(var Nem:String, var Fud: Int = 10,var Tiredness: Int = 0, var Gamin
     var wellrest: Boolean = false;
     var epicgamer: Boolean = false;
     var bookworm: Boolean = false;
-
+    var highthresh: Int = 7;
+    var lowthresh: Int = 3;
 
     fun Naming(Name: String)
     {
@@ -50,6 +51,11 @@ class Msiswa(var Nem:String, var Fud: Int = 10,var Tiredness: Int = 0, var Gamin
         {
             Fud = 10;
             fullfood = true;
+            //warning Already full
+        }
+        if(Food <= lowthresh)
+        {
+            //Warning low food
         }
     }
     fun Slepcheck(SleepTime: Int)
@@ -59,6 +65,11 @@ class Msiswa(var Nem:String, var Fud: Int = 10,var Tiredness: Int = 0, var Gamin
         {
             Tiredness = 0;
             wellrest = true;
+            //warning Already rested
+        }
+        if(SleepTime <= highthresh)
+        {
+            //warning too tired
         }
     }
     fun Gamecheck(GameTime: Int)
@@ -76,6 +87,10 @@ class Msiswa(var Nem:String, var Fud: Int = 10,var Tiredness: Int = 0, var Gamin
         {
             Study = 10;
             bookworm = true;
+        }
+        if(NerdTime <= 3)
+        {
+            //warning akan DO
         }
 
     }

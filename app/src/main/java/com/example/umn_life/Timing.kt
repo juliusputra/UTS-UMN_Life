@@ -25,18 +25,22 @@ class Timing {
     if(Currtime <= 11)
     {
         TimeOfDay.Morning.Greetings
+        //insert picture pagi
     }
     else if(Currtime >= 12 && Currtime <= 14)
     {
         TimeOfDay.Afternoon.Greetings
+        //insert picture siang
     }
     else if(CurrTime >= 15 && Currtime <= 18)
     {
         TimeOfDay.Evening.Greetings
+        //insert picture sore
     }
     else if (CurrTime >= 19 && Currtime <= 24)
     {
         TimeOfDay.Night.Greetings
+        //insert picture malem
     }
 }
 
