@@ -1,25 +1,45 @@
 package com.example.umn_life
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
+import android.widget.ImageButton
+import android.widget.ImageView
 import android.widget.Toast
-import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
-
+    private var currentAvatar = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        val avatar: ImageView = findViewById(R.id.avatar)
+        val name: EditText = findViewById(R.id.name)
+        val left: ImageButton = findViewById(R.id.btnLeft)
+        val right: ImageButton = findViewById(R.id.btnRight)
+        val play: Button = findViewById(R.id.btnPlay)
+        val avatarList: IntArray = intArrayOf(R.drawable.man, R.drawable.woman, R.drawable.amongus)
 
-        //Set onClickListener on login button
-        btnLogin.setOnClickListener {
-            //Check if the input fields are empty
-            if(etUsername.text.isEmpty() || etPassword.text.isEmpty()){
-                Toast.makeText(this, "Please enter your username and password", Toast.LENGTH_SHORT).show()
-            } else {
-                //Get the values from the input fields
-                val username = etUsername.text.toString()
-                val password = etPassword.text.toString()
+        left.setOnClickListener {
+            if (currentAvatar == 0) currentAvatar = avatarList.size - 1
+            else currentAvatar--
+            avatar.setImageResource(avatarList[currentAvatar])
+        }
+        right.setOnClickListener {
+            if (currentAvatar == avatarList.size - 1) currentAvatar = 0
+            else currentAvatar++
+            avatar.setImageResource(avatarList[currentAvatar])
+        }
 
-                //Check the credentials against the database
-                if(username == "admin" && password == "admin"){
+        play.setOnClickListener {
+            if (name.text.toString() == "") Toast.makeText(this, "Tolong masukkan nama pemain", Toast.LENGTH_SHORT).show()
+            else {
+                val i = Intent(this, GameActivity::class.java)
+                i.putExtra("name", name.text.toString())
+                i.putExtra("avatar", avatarList[currentAvatar])
+                startActivity(i)
+            }
+        }
+    }
+}
