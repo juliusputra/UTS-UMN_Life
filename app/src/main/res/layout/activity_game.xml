@@ -4,25 +4,247 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="20dp"
     tools:context=".GameActivity">
 
     <ImageView
-        android:id="@+id/ImgAvatar"
+        android:id="@+id/logoEat"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toTopOf="@id/logoGame"
+        app:layout_constraintEnd_toStartOf="@id/pgsEat"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/eat" />
+
+    <ProgressBar
+        android:id="@+id/pgsEat"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
         android:layout_width="120dp"
-        android:layout_height="120dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="40dp"
+        android:layout_marginEnd="16dp"
+        android:max="100"
+        android:progress="50"
+        android:scaleY="6"
+        app:layout_constraintBottom_toTopOf="@id/pgsGame"
+        app:layout_constraintEnd_toStartOf="@id/logoSleep"
+        app:layout_constraintStart_toEndOf="@id/logoEat"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/logoSleep"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toTopOf="@id/logoStudy"
+        app:layout_constraintEnd_toStartOf="@id/pgsSleep"
+        app:layout_constraintStart_toEndOf="@id/pgsEat"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/sleep" />
+
+    <ProgressBar
+        android:id="@+id/pgsSleep"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:max="100"
+        android:progress="50"
+        android:scaleY="6"
+        app:layout_constraintBottom_toTopOf="@id/pgsStudy"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/logoSleep"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/logoGame"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:scaleType="centerInside"
+        app:layout_constraintEnd_toStartOf="@id/pgsGame"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/logoEat"
+        app:srcCompat="@drawable/game" />
+
+    <ProgressBar
+        android:id="@+id/pgsGame"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="16dp"
+        android:max="100"
+        android:progress="50"
+        android:scaleY="6"
+        app:layout_constraintEnd_toStartOf="@id/logoStudy"
+        app:layout_constraintStart_toEndOf="@id/logoGame"
+        app:layout_constraintTop_toBottomOf="@id/pgsEat" />
+
+    <ImageView
+        android:id="@+id/logoStudy"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:scaleType="centerInside"
+        app:layout_constraintEnd_toStartOf="@id/pgsStudy"
+        app:layout_constraintStart_toEndOf="@id/pgsGame"
+        app:layout_constraintTop_toBottomOf="@id/logoSleep"
+        app:srcCompat="@drawable/study" />
+
+    <ProgressBar
+        android:id="@+id/pgsStudy"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:max="100"
+        android:progress="0"
+        android:scaleY="6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/logoStudy"
+        app:layout_constraintTop_toBottomOf="@id/pgsSleep" />
+
+    <TextView
+        android:id="@+id/semester"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="semester"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/salam"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/salam"/>
+        app:layout_constraintTop_toBottomOf="@+id/pgsGame" />
+
 
     <TextView
         android:id="@+id/salam"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="default"
+        android:text="salam"
         app:layout_constraintBottom_toTopOf="@+id/ImgAvatar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/semester" />
+
+    <TextView
+        android:id="@+id/jam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="00:00"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/salam" />
+
+    <ImageView
+        android:id="@+id/ImgAvatar"
+        android:layout_width="300dp"
+        android:layout_height="240dp"
+        android:src="@drawable/amongus"
+        android:background="@drawable/malam"
+        app:layout_constraintBottom_toTopOf="@id/logoSleep2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/jam" />
+
+    <ImageView
+        android:id="@+id/logoEat2"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toTopOf="@+id/logoGame2"
+        app:layout_constraintEnd_toStartOf="@id/btnEat"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ImgAvatar"
+        app:srcCompat="@drawable/eat" />
+
+    <Button
+        android:id="@+id/btnEat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="8dp"
+        android:text="Eat"
+        app:layout_constraintBottom_toTopOf="@+id/btnGame"
+        app:layout_constraintEnd_toStartOf="@id/logoSleep2"
+        app:layout_constraintStart_toEndOf="@id/logoEat2"
+        app:layout_constraintTop_toBottomOf="@+id/ImgAvatar" />
+
+    <ImageView
+        android:id="@+id/logoSleep2"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toTopOf="@+id/logoStudy2"
+        app:layout_constraintEnd_toStartOf="@id/btnSleep"
+        app:layout_constraintStart_toEndOf="@id/btnEat"
+        app:layout_constraintTop_toBottomOf="@id/ImgAvatar"
+        app:srcCompat="@drawable/sleep" />
+
+    <Button
+        android:id="@+id/btnSleep"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Sleep"
+        app:layout_constraintBottom_toTopOf="@+id/btnStudy"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/logoSleep2"
+        app:layout_constraintTop_toBottomOf="@id/ImgAvatar" />
+
+    <ImageView
+        android:id="@+id/logoGame2"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnGame"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/logoEat2"
+        app:srcCompat="@drawable/game" />
+
+    <Button
+        android:id="@+id/btnGame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:text="Play"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/logoStudy2"
+        app:layout_constraintStart_toEndOf="@id/logoGame2"
+        app:layout_constraintTop_toBottomOf="@id/btnEat" />
+
+    <ImageView
+        android:id="@+id/logoStudy2"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnStudy"
+        app:layout_constraintStart_toEndOf="@id/btnGame"
+        app:layout_constraintTop_toBottomOf="@id/logoSleep2"
+        app:srcCompat="@drawable/study" />
+
+    <Button
+        android:id="@+id/btnStudy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Study"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/logoStudy2"
+        app:layout_constraintTop_toBottomOf="@id/btnSleep" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
