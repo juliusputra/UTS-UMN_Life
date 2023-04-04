@@ -1,5 +1,6 @@
 # UTS-UMN_Life
-# Kelompok 2
+
+Kelompok 2
 Anggota :
 1. Julius Caesar Nurdiyana Putra - 00000044377
 2. Yohan Kurnia Wijaya - 00000042606
