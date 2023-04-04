@@ -9,8 +9,8 @@
 
     <ImageView
         android:id="@+id/logoEat"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:scaleType="centerInside"
         app:layout_constraintBottom_toTopOf="@id/logoGame"
         app:layout_constraintEnd_toStartOf="@id/pgsEat"
@@ -23,8 +23,9 @@
         style="@style/Widget.AppCompat.ProgressBar.Horizontal"
         android:layout_width="120dp"
         android:layout_height="40dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="8dp"
         android:max="100"
+        android:min="0"
         android:progress="50"
         android:scaleY="6"
         app:layout_constraintBottom_toTopOf="@id/pgsGame"
@@ -34,9 +35,9 @@
 
     <ImageView
         android:id="@+id/logoSleep"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="16dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="8dp"
         android:scaleType="centerInside"
         app:layout_constraintBottom_toTopOf="@id/logoStudy"
         app:layout_constraintEnd_toStartOf="@id/pgsSleep"
@@ -50,6 +51,7 @@
         android:layout_width="120dp"
         android:layout_height="40dp"
         android:max="100"
+        android:min="0"
         android:progress="50"
         android:scaleY="6"
         app:layout_constraintBottom_toTopOf="@id/pgsStudy"
@@ -59,9 +61,10 @@
 
     <ImageView
         android:id="@+id/logoGame"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="@+id/pgsGame"
         app:layout_constraintEnd_toStartOf="@id/pgsGame"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/logoEat"
@@ -72,8 +75,9 @@
         style="@style/Widget.AppCompat.ProgressBar.Horizontal"
         android:layout_width="120dp"
         android:layout_height="40dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="8dp"
         android:max="100"
+        android:min="0"
         android:progress="50"
         android:scaleY="6"
         app:layout_constraintEnd_toStartOf="@id/logoStudy"
@@ -82,10 +86,11 @@
 
     <ImageView
         android:id="@+id/logoStudy"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="16dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="8dp"
         android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="@+id/pgsStudy"
         app:layout_constraintEnd_toStartOf="@id/pgsStudy"
         app:layout_constraintStart_toEndOf="@id/pgsGame"
         app:layout_constraintTop_toBottomOf="@id/logoSleep"
@@ -97,6 +102,7 @@
         android:layout_width="120dp"
         android:layout_height="40dp"
         android:max="100"
+        android:min="0"
         android:progress="0"
         android:scaleY="6"
         app:layout_constraintEnd_toEndOf="parent"
@@ -113,7 +119,7 @@
         app:layout_constraintBottom_toTopOf="@+id/salam"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pgsGame" />
+        app:layout_constraintTop_toBottomOf="@+id/pgsStudy" />
 
 
     <TextView
@@ -138,8 +144,8 @@
 
     <ImageView
         android:id="@+id/ImgAvatar"
-        android:layout_width="300dp"
-        android:layout_height="240dp"
+        android:layout_width="200dp"
+        android:layout_height="160dp"
         android:src="@drawable/amongus"
         android:background="@drawable/malam"
         app:layout_constraintBottom_toTopOf="@id/logoSleep2"
@@ -149,8 +155,8 @@
 
     <ImageView
         android:id="@+id/logoEat2"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:scaleType="centerInside"
@@ -165,7 +171,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="32dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginBottom="8dp"
         android:text="Eat"
         app:layout_constraintBottom_toTopOf="@+id/btnGame"
@@ -175,9 +181,9 @@
 
     <ImageView
         android:id="@+id/logoSleep2"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="32dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:scaleType="centerInside"
@@ -201,8 +207,8 @@
 
     <ImageView
         android:id="@+id/logoGame2"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_marginTop="8dp"
         android:scaleType="centerInside"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -216,7 +222,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="32dp"
+        android:layout_marginEnd="16dp"
         android:text="Play"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/logoStudy2"
@@ -225,9 +231,9 @@
 
     <ImageView
         android:id="@+id/logoStudy2"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="32dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:scaleType="centerInside"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -7,7 +7,7 @@ class Timing {
     //while running ticktime++
     //Ambil 1 jam = 15s
 
-    if(TickTime <= 0)
+    /*if(TickTime <= 0)
     {
         if(TickTime >= 15)
         {
@@ -41,7 +41,7 @@ class Timing {
     {
         TimeOfDay.Night.Greetings
         //insert picture malem
-    }
+    }*/
 }
 
 enum class TimeOfDay(val Greetings: String)
